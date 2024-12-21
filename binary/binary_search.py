@@ -58,7 +58,7 @@ class BinarySearchTree:
             elif value > crr_node.value:
                 par_node = crr_node
                 crr_node = par_node.right
-            elif crr_node.value = 
+            # elif crr_node.value = 
 
 
 
