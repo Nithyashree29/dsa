@@ -1,0 +1,19 @@
+Top bookmark for python - https://docs.python.org
+PEP - Python enhancement proposals -  These are a fantastic resource to understand how certain things work in python, and whyy they were implemented in a certain way..
+http://planetpython.org/
+stack overflow
+
+https://github.com/LearningJournal/Kafka-Streams-Master-Class
+
+https://github.com/fbaptiste/python-deepdive
+
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/install overview.html
+
+https://www.jetbrains.com/help/idea/installation-guide.html
+
+https://docs.docker.com/docker-for-windows/install
+
+https://docs.docker.com/docker-fro-mac/install
+
+https://www.jetbrains.com/help/idea/docker.html
+
