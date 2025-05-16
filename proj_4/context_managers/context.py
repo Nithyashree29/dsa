@@ -117,3 +117,45 @@ class ResourceManager:
 with ResourceManager('spam') as res:
     print(f'{res.name} = {res.state}')
 print(f'{res.name} = {res.state}')
+
+# Caveat with lazy Iteratorss   
+import csv
+def read_data():
+    with open('nyc_parking_tickets_extract.csv') as f:
+        return csv.reader(f, delimiter=',', quotechar='"')
+        # yield from csv.reader(f, delimiter=',', quotechar='"') or list(**)
+    
+reader = read_data()
+for row in reader:
+    print(row)  # here we will have i/o operation on closed file. because the context manager go on call exit method. so use yield from 
+
+
+class DataIterator:
+    def __init__(self, fname):
+        self._fname = fname
+        self._f = None
+        
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        row = next(self._f)
+        return row.strip('\n').split(',')
+    
+    # Iterator protocol
+    
+    def __enter__(self):
+        self._f = open(self._fname)
+        return self
+    
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        if not self._f.closed:
+            self._f.close()
+        return False
+    
+    # Context manager protocol
+    
+with DataIterator('nyc_parking .csv') as data:
+    for row in data:
+        print(row)
+

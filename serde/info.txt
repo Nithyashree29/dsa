@@ -1,0 +1,30 @@
+Serializing and Deserializing Objects
+- useful for persistence and/or transmission.
+ sometimes we have objects (data)
+- want to "save" them somewhere so we can retrieve ("load") them later.
+- even after program that generated the data has terminated.
+- transmit them to someone or something else outside our app.
+
+Generically applies to any object
+- create a persistent representation of the object -> Serializing.
+- reconstruct the object from the serialized data -> Deserializing.
+
+Python Specific - built-in mechanism to serialize and Deserialize many objects using binary representation.
+Pickling, Unpickling
+Databases
+Json
+
+Pickling - 
+- A way to represnt an object in a persistent way -> disk, transmission.
+create an object's representation -> serializing
+                                                    -> marshalling
+create object from representation -> deserializing
+
+import pickle
+
+dump -> pickle to file
+load -> unpickle from file
+
+dumps -> returns a string pickled representation -> store in a variable.
+loads -> unpickle from supplied argument.
+
