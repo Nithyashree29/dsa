@@ -200,7 +200,8 @@ def divisors(n):
             l1.append(i)
     return l1
 
-print(divisors(6))def count_digits(num):
+print(divisors(6))
+def count_digits(num):
     if num == 0:
         return 1
     cnt = 0
@@ -256,3 +257,13 @@ def largest(n):
     return ld
 
 print(largest(34567890))
+
+def factorial_1(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact = fact * i
+        
+    return fact
+
+
+    
