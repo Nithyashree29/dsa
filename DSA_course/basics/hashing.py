@@ -35,4 +35,66 @@ print(char_hash(['a', 'b']))
 
 # In division method remember collision happens lets say we have [21, 25, 36, 52, 28] and if you hypothetically modulo the number by prime number 7 then collision happens. (same num pointing to the same index)
 # This is when something like chaining comes in -
+
+def highest_occuring_element(arr):               #TC -O(N2), SC = O(N)
+    n = len(arr)
+    masFreq = 0
+    maxEle = 0
+    visited = [False] * n
+    for i in range(n):
+        if visited[i]:
+            continue
+        freq = 0
+        for j in range(i, n):
+            if nums[i] == nums[j]:
+                ferq += 1
+                visited[j] = True
+        if freq > maxFreq:
+            masFreq = Freq
+            maxEle = nums[i]
+        elif freq == maxFreq:
+            masEle = min(maxEle, nums[i])
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
         
