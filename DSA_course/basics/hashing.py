@@ -64,7 +64,18 @@ def optimized_approach(arr):
         maxi = max(maxi, arr[i])
     hash_table[maxi+1] = [0]
     
-
+def max_element(arr):
+    hash_table = [False] * len(arr)
+    maxi = 0
+    for i in range(len(arr)):
+        if hash_table[arr[i]]:
+            hash_table[arr[i]] += 1
+        else:
+            hash_table[arr[i]] = 1
+        maxi = max(maxi, arr[i])
+    return maxi, hash_table, hash_table[maxi])
+    
+            
 
 
 
