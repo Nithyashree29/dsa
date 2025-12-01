@@ -75,7 +75,8 @@ def max_element(arr):
         maxi = max(maxi, arr[i])
     return maxi, hash_table, hash_table[maxi])
     
-            
+# Note - In map in all cases it takes O(log N), Best , average and worst aswell, and is ordered.
+# Unordered map - besta nd average  o[1], O(N) in worst case when lot of collisions happening.
 
 
 
