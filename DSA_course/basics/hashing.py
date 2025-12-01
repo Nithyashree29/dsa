@@ -77,7 +77,13 @@ def max_element(arr):
     
 # Note - In map in all cases it takes O(log N), Best , average and worst aswell, and is ordered.
 # Unordered map - besta nd average  o[1], O(N) in worst case when lot of collisions happening.
-
+# tree map - always O(log N).
+# Internally all these are implemented using 
+    # Division Method - mod(num) and reminder will be like the index value for it, there is a chance of collision and that is when chaining comes into picture. (When ypur formula ends up pointing same index then collision happens) and dicision implements chaining Internally along with the sorted order and individual chains will be very very small and it might use binary search etc to search and fetch results.
+        # TC - o(1).
+    # Folding Method
+    # Mid Square Method
+    
 
 
 
