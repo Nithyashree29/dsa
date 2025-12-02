@@ -64,16 +64,16 @@ def optimized_approach(arr):
         maxi = max(maxi, arr[i])
     hash_table[maxi+1] = [0]
     
-def max_element(arr):
-    hash_table = [False] * len(arr)
-    maxi = 0
-    for i in range(len(arr)):
-        if hash_table[arr[i]]:
-            hash_table[arr[i]] += 1
-        else:
-            hash_table[arr[i]] = 1
-        maxi = max(maxi, arr[i])
-    return maxi, hash_table, hash_table[maxi])
+# def max_element(arr):
+#     hash_table = [False] * len(arr)
+#     maxi = 0
+#     for i in range(len(arr)):
+#         if hash_table[arr[i]]:
+#             hash_table[arr[i]] += 1
+#         else:
+#             hash_table[arr[i]] = 1
+#         maxi = max(maxi, arr[i])
+#     return maxi, hash_table, hash_table[maxi])
     
 # Note - In map in all cases it takes O(log N), Best , average and worst aswell, and is ordered.
 # Unordered map - besta nd average  o[1], O(N) in worst case when lot of collisions happening.
@@ -83,7 +83,13 @@ def max_element(arr):
         # TC - o(1).
     # Folding Method
     # Mid Square Method
-    
+def mostFrequentElement(nums):
+    if not nums:
+        return -1
+    count = Counter(nums)
+    max_freq = max(count.values)
+    val = [num for num, freq in count.items() if freq == max_freq]
+    return min(val)
 
 
 
