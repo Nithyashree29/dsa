@@ -114,10 +114,10 @@ def secondMostFrequent(nums):
     return count.most_common(2)[1][0]
 
 
-def secondMostFrequent(nums):
+def secondMostFrequent(nums):    #need to debug
     if len(nums) < 2:
         return -1
-    freq = {}
+    freq = {}            #Hash Map
     first_count = second-count = 0
     first_num = second_num = float('inf')
 
@@ -127,17 +127,21 @@ def secondMostFrequent(nums):
 
         if count > first_count:
             #promote current to first , old first becomes second
-            second_count = first_count
-            second_num = first_num
+            if num != first:
+                second_count = first_count
+                second_num = first_num
             first_count = count
             first_num = num
-        elif count > second_count and count < first_count:
+        elif count > secomnd_count:
+            second_num = num
+            second_count = count
+        elif count == first_count and num < first_num:
             #tie for first -> keep smaller numder
             first_num = num
         elif count == second_count and num < second_num:
             second_num = num
 
-    return second_num if second_count >0  else -1
+    return second_num if second_count >0  else -1        #TC -O(n) SC - O(k)
     
         
 
