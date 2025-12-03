@@ -91,6 +91,21 @@ def mostFrequentElement(nums):
     val = [num for num, freq in count.items() if freq == max_freq]
     return min(val)
 
+def mostFrequentElement(nums):
+    if not nums:
+        return -1
+    freq = {}
+    max_count = 0
+    result = float('inf')
+
+    for num in nums:
+        freq[num] = freq.get(num, 0) + 1
+        if freq[num] > max_count:
+            max_count = freq[num]
+            result = num
+        elif freq[num] == max_count and num < result:
+            result = num
+    return result
 
 
 
