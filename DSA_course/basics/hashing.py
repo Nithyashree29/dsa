@@ -107,10 +107,39 @@ def mostFrequentElement(nums):
             result = num
     return result
 
+def secondMostFrequent(nums):
+    count = Counter(nums)
+    if len(count) < 2:
+        return -1
+    return count.most_common(2)[1][0]
 
 
+def secondMostFrequent(nums):
+    if len(nums) < 2:
+        return -1
+    freq = {}
+    first_count = second-count = 0
+    first_num = second_num = float('inf')
 
+    for num in nums:
+        freq[num] =  freq.get(num, 0) + 1
+        count = freq[num]
 
+        if count > first_count:
+            #promote current to first , old first becomes second
+            second_count = first_count
+            second_num = first_num
+            first_count = count
+            first_num = num
+        elif count > second_count and count < first_count:
+            #tie for first -> keep smaller numder
+            first_num = num
+        elif count == second_count and num < second_num:
+            second_num = num
+
+    return second_num if second_count >0  else -1
+    
+        
 
 
 
