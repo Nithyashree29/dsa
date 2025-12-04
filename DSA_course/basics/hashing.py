@@ -1,5 +1,6 @@
-🏎️✈️# Hashing - Hashing is a technique used in computer science to quickly find, store, and manage data. It works by taking an input, like a number or a staring and converting it into a fixed-size value calles a hash. This hash then points to wqhere the data is atored in a structure cal;led hash table. The main goal os hashing is to make data retrieval fast, even when dealing with large amounts of information, Hashing is widely used in carious applications, such as searching databases, managing passwords, and speeding up data lookups in many types of software.
+#✈️# Hashing - Hashing is a technique used in computer science to quickly find, store, and manage data. It works by taking an input, like a number or a staring and converting it into a fixed-size value calles a hash. This hash then points to wqhere the data is atored in a structure cal;led hash table. The main goal os hashing is to make data retrieval fast, even when dealing with large amounts of information, Hashing is widely used in carious applications, such as searching databases, managing passwords, and speeding up data lookups in many types of software.
 # Note - (Number hashing)if you want to declare the array datya structure to hash the values if you are declaring it inside main in that case the largest number could be 10 to the power 6 only. Outside the maib which is global variable (ousiude int main()) you ca declare as big as 10 power 7 in case of int, In case of boolean you could go as large as 10 ower 8.
+from collections import Counter
 def hash_int(arr):
     hash_table = [0] * 10
     for i in arr:
@@ -36,8 +37,8 @@ print(char_hash(['a', 'b']))
 # In division method remember collision happens lets say we have [21, 25, 36, 52, 28] and if you hypothetically modulo the number by prime number 7 then collision happens. (same num pointing to the same index)
 # This is when something like chaining comes in -
 
-def highest_occuring_element(arr):               #TC -O(N2), SC = O(N), Brute force approach
-    n = len(arr)
+def highest_occuring_element(nums):               #TC -O(N2), SC = O(N), Brute force approach
+    n = len(nums)
     masFreq = 0
     maxEle = 0
     visited = [False] * n
@@ -118,7 +119,7 @@ def secondMostFrequent(nums):    #need to debug
     if len(nums) < 2:
         return -1
     freq = {}            #Hash Map
-    first_count = second-count = 0
+    first_count = second_count = 0
     first_num = second_num = float('inf')
 
     for num in nums:
@@ -127,12 +128,12 @@ def secondMostFrequent(nums):    #need to debug
 
         if count > first_count:
             #promote current to first , old first becomes second
-            if num != first:
+            if num != first_num:
                 second_count = first_count
                 second_num = first_num
             first_count = count
             first_num = num
-        elif count > secomnd_count:
+        elif count > second_count:
             second_num = num
             second_count = count
         elif count == first_count and num < first_num:
