@@ -87,3 +87,68 @@ class Solution:
         reverse(0, len(s)-1, s)
         return"".join(s)
 print(Solution.reverseString(['B', 'A', 'N', 'A']))
+
+def pallindrome(s):
+    def isPalindrome(s, l, r):
+        if l > r:
+            return True
+        if s[l] != s[r]:
+            return False
+        return isPalindrome(s, l+1, r-1)
+    return isPalindrome(s, 0, len(s)-1)
+print(pallindrome("hannaha"))
+
+def primeNumber(num):   # A given integrer num is a primenumber if that is divisible only by 1 and itself.
+    if num <= 1:
+        return False
+    def checkPrimeNumber(num, x):
+        if x*x >= num:   
+            return True
+        if num%x == 0:
+            return False
+        return checkPrimeNumber(num, x+1)
+    return checkPrimeNumber(num, 2)
+print(primeNumber(56))
+
+class Solution():
+    def reverseArray(self, arr):
+        self.array(arr, 0, len(arr)-1)
+        return arr
+    def array(self, arr, l, r):
+        if l >= r:
+            return
+        arr[l], arr[r] = arr[r], arr[l]
+        self.array(arr, l+1, r-1)
+    
+obj = Solution()
+print(obj.reverseArray([1,2,3,465,98,88]))
+
+def checkArrySorted(arr):
+    def checkSort(arr, i):
+        if i >= len(arr)-1:
+            return 
+        if arr[i] > arr[i+1]:
+            return False
+        return checkSort(arr, 0)
+  
+class Solution():   
+    def addDigits(self, num):     # Given an integer num, repeatedly add all the digits until the result has only one digit, and return it.
+        if num < 10:
+            return num
+        sum_digits = self.sumDigits(num)
+        return self.addDigits(sum_digits)
+
+    def sumDigits(self, num):
+        if num == 0:
+            return 0
+        return self.sumDigits(num//10) + (num % 10)
+        
+class Solution():
+    def Fibonacci(self, num):
+        if num == 0:
+            return 0
+        if num == 1:
+            return 1
+        return self.Fibonacci(num-1) + self.Fibonacci(num-2)
+obj = Solution()
+print(obj.Fibonacci(2))
