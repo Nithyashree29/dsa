@@ -23,5 +23,27 @@ class Solution():
             if not isswapped:
                 break
         return nums
+#TC - O(N2), O(N) for the best case, SC - O(1), because bubble sort is ain in-place sorting algorithm
     
+#Insertion Sort - Insertion sort builds array one element at a time by repeatedly picking the next element and inserting it into its correct position within the already sorted part of the array.
+
+    def insertionSort(self, nums):
+        n = len(nums)
+        for i in range(1, n):
+            key = nums[i]
+            j = i - 1
+            
+            while j >= 0 and nums[j] > key:
+                nums[j + 1] = nums[j]
+                j -= 1
+            nums[j + 1] = key
+            
+        return nums
+# TC - O(N2), SC - O(1)
+
+# MergeSort -  Is a powerful sorting algorithm that follows the divide and conquer approach.The array is divided into two equal halves until each sub-array contains only one element, Each pair of smaller sorted ararys is then merged into a larger sorted array.
+# The algorithm consists of two main functions :
+#     merge() - This function merges the two halves of the arraym, assuming both parts are already sorted.
+#     mergeSort() -  This function divides the array into 2 parts, how to mid an dmid+1 to high where, low is the leftmost index of the arary, high iss the rightmost index of the arary, and mid is the middle index of the array.
     
+        
